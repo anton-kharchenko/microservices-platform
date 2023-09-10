@@ -6,7 +6,7 @@ namespace PlatformService.Repositories;
 
 public class PlatformRepository : IPlatformRepository
 {
-    private AppDbContext _dbContext;
+    private readonly AppDbContext _dbContext;
 
     public PlatformRepository(AppDbContext dbContext)
     {
@@ -15,7 +15,7 @@ public class PlatformRepository : IPlatformRepository
 
     public bool SaveChanges()
     {
-       return _dbContext.SaveChanges()>=0;
+        return _dbContext.SaveChanges() >= 0;
     }
 
     public IEnumerable<Platform?> GetAllPlatforms()
