@@ -1,4 +1,5 @@
 using PlatformService.Extensions;
+using PlatformService.Mock;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,3 +21,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+
+DbMockData.Population(app);
