@@ -17,4 +17,9 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<AppDbContext>(op =>
             op.UseInMemoryDatabase("InMem"));
     }
+
+    public static void AddMapper(this IServiceCollection services)
+    {
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+    }
 }

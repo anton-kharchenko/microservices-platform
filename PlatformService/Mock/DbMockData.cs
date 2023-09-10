@@ -13,7 +13,7 @@ public static class DbMockData
 
     private static void SeedData(AppDbContext? context)
     {
-        if (!context.Platforms.Any())
+        if (context != null && !context.Platforms.Any())
         {
             Console.WriteLine("-> Seeding data");
             context.Platforms.AddRange(
